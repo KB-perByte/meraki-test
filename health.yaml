@@ -3,4 +3,8 @@
   hosts: meraki
   gather_facts: false
   roles:
+    - name: Execute the command in local
+      ansible.builtin.shell: ls /usr/share/ansible/collections/ansible_collections
+      delegate_to: localhost
+
     - role: network.meraki_ops.health_checks
